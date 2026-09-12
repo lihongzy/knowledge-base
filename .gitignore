@@ -4,3 +4,9 @@ Thumbs.db
 
 # Generated logs
 *.log
+
+# Generated Next.js files
+site/.next/
+site/out/
+site/public/note-assets/
+site/node_modules/
