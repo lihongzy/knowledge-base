@@ -10,3 +10,8 @@ site/.next/
 site/out/
 site/public/note-assets/
 site/node_modules/
+site/coverage/
+
+# Local site configuration
+site/.env*
+!site/.env.example
