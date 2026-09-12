@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { categoryFor, categoryLabel, getAllNotes } from "@/lib/notes";
-import { encodePath, siteHref } from "@/lib/site";
+import { encodePath, pageHref } from "@/lib/site";
 
 export default async function HomePage() {
   const notes = await getAllNotes();
@@ -30,7 +30,7 @@ export default async function HomePage() {
             <ul>
               {entries.map((note) => (
                 <li key={note.relativePath}>
-                  <Link href={siteHref(`/notes/${note.slug.map(encodePath).join("/")}/`)}>{note.title}</Link>
+                  <Link href={pageHref(`/notes/${note.slug.map(encodePath).join("/")}/`)}>{note.title}</Link>
                   <span>{note.relativePath.split("/").slice(1, -1).join(" / ") || "根目录"}</span>
                 </li>
               ))}

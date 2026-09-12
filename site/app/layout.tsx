@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { siteHref } from "@/lib/site";
+import { pageHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "轰哥的知识库",
@@ -13,7 +13,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="zh-CN">
       <body>
         <header className="site-header">
-          <Link className="wordmark" href={siteHref("/")}>
+          <Link className="wordmark" href={pageHref("/")}>
             <span>HONG</span><strong>轰哥的知识库</strong>
           </Link>
           <p>Personal notes, carefully kept.</p>

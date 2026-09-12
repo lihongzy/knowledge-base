@@ -2,7 +2,7 @@ import path from "node:path";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { encodePath, siteHref } from "@/lib/site";
+import { assetHref, encodePath, pageHref } from "@/lib/site";
 
 type MarkdownContentProps = {
   content: string;
@@ -13,13 +13,13 @@ function resolveInternalLink(relativePath: string, href: string): string {
   const [pathname, hash = ""] = href.split("#");
   const target = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
   const withoutExtension = target.replace(/\.md$/i, "");
-  return `${siteHref(`/notes/${encodePath(withoutExtension)}/`)}${hash ? `#${hash}` : ""}`;
+  return `${pageHref(`/notes/${encodePath(withoutExtension)}/`)}${hash ? `#${hash}` : ""}`;
 }
 
 function resolveAsset(relativePath: string, source: string): string {
   if (source.startsWith("/") || /^[a-z]+:/i.test(source)) return source;
   const assetPath = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), source));
-  return siteHref(`/note-assets/${encodePath(assetPath)}`);
+  return assetHref(`/note-assets/${encodePath(assetPath)}`);
 }
 
 type MarkdownNode = {

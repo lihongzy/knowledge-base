@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MarkdownContent } from "@/components/markdown-content";
 import { categoryFor, categoryLabel, categoryNames, getAllNotes, getNote } from "@/lib/notes";
-import { encodePath, siteHref } from "@/lib/site";
+import { encodePath, pageHref } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -18,10 +18,10 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
     const notes = (await getAllNotes()).filter((item) => categoryFor(item) === slug[0]);
     return (
       <div className="note-shell category-page">
-        <nav className="breadcrumbs" aria-label="面包屑"><Link href={siteHref("/")}>知识库</Link><span>/</span><span>{categoryLabel(slug[0])}</span></nav>
+        <nav className="breadcrumbs" aria-label="面包屑"><Link href={pageHref("/")}>知识库</Link><span>/</span><span>{categoryLabel(slug[0])}</span></nav>
         <h1>{categoryLabel(slug[0])}</h1>
         <ul className="category-note-list">
-          {notes.map((item) => <li key={item.relativePath}><Link href={siteHref(`/notes/${item.slug.map(encodePath).join("/")}/`)}>{item.title}</Link><span>{item.relativePath.split("/").slice(1, -1).join(" / ") || "根目录"}</span></li>)}
+          {notes.map((item) => <li key={item.relativePath}><Link href={pageHref(`/notes/${item.slug.map(encodePath).join("/")}/`)}>{item.title}</Link><span>{item.relativePath.split("/").slice(1, -1).join(" / ") || "根目录"}</span></li>)}
         </ul>
       </div>
     );
@@ -35,9 +35,9 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
   return (
     <div className="note-shell">
       <nav className="breadcrumbs" aria-label="面包屑">
-        <Link href={siteHref("/")}>知识库</Link>
+        <Link href={pageHref("/")}>知识库</Link>
         <span>/</span>
-        <Link href={siteHref(`/notes/${encodePath(category)}/`)}>{categoryLabel(category)}</Link>
+        <Link href={pageHref(`/notes/${encodePath(category)}/`)}>{categoryLabel(category)}</Link>
         {segments.slice(1, -1).map((segment, index) => <span key={`${segment}-${index}`}>/ {segment}</span>)}
       </nav>
       <article className="prose">
