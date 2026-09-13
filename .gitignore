@@ -22,3 +22,6 @@ temp/
 # Local credentials and Python environments for Hello Agents examples
 notes/30-resources/tools/hello-agents/code/.env
 notes/30-resources/tools/hello-agents/code/.venv/
+
+# Python bytecode caches
+__pycache__/

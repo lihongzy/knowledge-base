@@ -12,3 +12,6 @@
         - [Hello Agents 代码环境](notes/30-resources/tools/hello-agents/code/README.md)
       - `source-notes/`
         - [第一章：第一个智能旅行助手](notes/30-resources/tools/hello-agents/source-notes/chapter1-first-agent.md)
+        - [第二章：ELIZA 规则型聊天机器人](notes/30-resources/tools/hello-agents/source-notes/chapter2-eliza.md)
+        - [第三章：语言模型基础](notes/30-resources/tools/hello-agents/source-notes/chapter3-language-model-foundations.md)
+        - [第四章：智能体经典范式](notes/30-resources/tools/hello-agents/source-notes/chapter4-classic-agent-paradigms.md)
