@@ -28,6 +28,8 @@ Uses a single-context layout. See `docs/agents/domain.md`.
 
 新增、移动或重命名笔记后，运行 `scripts/update-index.ps1` 更新索引。不要直接编辑自动生成的 `INDEX.md`。
 
+Markdown 笔记编写规则见 `docs/markdown-writing-rules.md`。
+
 ## Temporary artifacts
 
 AI 生成的临时文件和中间产物统一存放在 `temp/`。

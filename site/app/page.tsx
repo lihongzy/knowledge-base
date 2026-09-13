@@ -2,6 +2,10 @@ import Link from "next/link";
 import { categoryFor, categoryLabel, getAllNotes } from "@/lib/notes";
 import { encodePath, pageHref } from "@/lib/site";
 
+function directoryFor(relativePath: string): string {
+  return relativePath.split("/").slice(1, -1).join(" / ") || "根目录";
+}
+
 export default async function HomePage() {
   const notes = await getAllNotes();
   const categories = new Map<string, typeof notes>();
@@ -27,14 +31,24 @@ export default async function HomePage() {
               <h2>{categoryLabel(category)}</h2>
               <em>{entries.length}</em>
             </div>
-            <ul>
-              {entries.map((note) => (
-                <li key={note.relativePath}>
-                  <Link href={pageHref(`/notes/${note.slug.map(encodePath).join("/")}/`)}>{note.title}</Link>
-                  <span>{note.relativePath.split("/").slice(1, -1).join(" / ") || "根目录"}</span>
-                </li>
+            <div className="directory-groups">
+              {[...entries.reduce((groups, note) => {
+                const directory = directoryFor(note.relativePath);
+                groups.set(directory, [...(groups.get(directory) ?? []), note]);
+                return groups;
+              }, new Map<string, typeof entries>()).entries()].map(([directory, directoryNotes]) => (
+                <section className="directory-group" key={directory}>
+                  <h3>{directory}</h3>
+                  <ul>
+                    {directoryNotes.map((note) => (
+                      <li key={note.relativePath}>
+                        <Link href={pageHref(`/notes/${note.slug.map(encodePath).join("/")}/`)}>{note.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </section>

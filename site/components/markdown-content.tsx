@@ -17,9 +17,10 @@ function resolveInternalLink(relativePath: string, href: string): string {
 }
 
 function resolveAsset(relativePath: string, source: string): string {
-  if (source.startsWith("/") || /^[a-z]+:/i.test(source)) return source;
-  const assetPath = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), source));
-  return assetHref(`/note-assets/${encodePath(assetPath)}`);
+  const [pathname, hash = ""] = source.split("#");
+  if (pathname.startsWith("/") || /^[a-z]+:/i.test(pathname)) return source;
+  const assetPath = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
+  return `${assetHref(`/note-assets/${encodePath(assetPath)}`)}${hash ? `#${hash}` : ""}`;
 }
 
 type MarkdownNode = {
@@ -54,6 +55,9 @@ export function MarkdownContent({ content, relativePath }: MarkdownContentProps)
           }
           if (/^https?:\/\//i.test(href)) {
             return <a href={href} target="_blank" rel="noreferrer" {...props}>{children}</a>;
+          }
+          if (!href.startsWith("#") && !/^[a-z]+:/i.test(href)) {
+            return <a href={resolveAsset(relativePath, href)} {...props}>{children}</a>;
           }
           return <a href={href} {...props}>{children}</a>;
         },
