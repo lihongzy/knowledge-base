@@ -4,7 +4,7 @@ import "./globals.css";
 import { pageHref } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "轰哥的知识库",
+  title: "梦梦的知识库",
   description: "个人知识笔记的静态展示站点",
 };
 
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <header className="site-header">
           <Link className="wordmark" href={pageHref("/")}>
-            <span>HONG</span><strong>轰哥的知识库</strong>
+            <span>MENG</span><strong>梦梦的知识库</strong>
           </Link>
           <p>Personal notes, carefully kept.</p>
         </header>
