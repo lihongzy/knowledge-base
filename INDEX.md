@@ -7,3 +7,8 @@
     - `git/`
       - [Git 命令实验手册](notes/30-resources/tools/git/git命令练习.md)
       - [Git 团队协作与回滚手册](notes/30-resources/tools/git/git使用手册.md)
+    - `hello-agents/`
+      - `code/`
+        - [Hello Agents 代码环境](notes/30-resources/tools/hello-agents/code/README.md)
+      - `source-notes/`
+        - [第一章：第一个智能旅行助手](notes/30-resources/tools/hello-agents/source-notes/chapter1-first-agent.md)

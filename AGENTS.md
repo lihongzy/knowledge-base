@@ -27,3 +27,7 @@ Uses a single-context layout. See `docs/agents/domain.md`.
 需要进一步分类时，在对应类别下创建主题文件夹。Markdown 笔记应与本地图片或附件保存在一起，确保相对链接有效。例如，Git 参考资料应放在 `notes/30-resources/tools/git/`。
 
 新增、移动或重命名笔记后，运行 `scripts/update-index.ps1` 更新索引。不要直接编辑自动生成的 `INDEX.md`。
+
+## Temporary artifacts
+
+AI 生成的临时文件和中间产物统一存放在 `temp/`。

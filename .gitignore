@@ -15,3 +15,10 @@ site/coverage/
 # Local site configuration
 site/.env*
 !site/.env.example
+
+# AI-generated temporary artifacts and cloned repositories
+temp/
+
+# Local credentials and Python environments for Hello Agents examples
+notes/30-resources/tools/hello-agents/code/.env
+notes/30-resources/tools/hello-agents/code/.venv/

@@ -15,7 +15,16 @@ if (-not (Test-Path -LiteralPath $notesRoot)) {
     $lines.Add('No notes yet. Create one with `scripts/new-note.ps1`.')
 }
 else {
-    $files = Get-ChildItem -LiteralPath $notesRoot -Recurse -File -Filter '*.md' | Sort-Object FullName
+    $files = Get-ChildItem -LiteralPath $notesRoot -Recurse -File -Filter '*.md' |
+        Where-Object {
+            $relativePath = $_.FullName.Substring($notesRoot.Length).TrimStart('\', '/')
+            $segments = $relativePath -split '[\\/]'
+            $ignoredSegments = @($segments | Where-Object {
+                $_ -in @('.venv', 'node_modules', '__pycache__') -or $_ -like '.*'
+            })
+            $ignoredSegments.Count -eq 0
+        } |
+        Sort-Object FullName
     if ($files.Count -eq 0) {
         $lines.Add('No notes yet. Create one with `scripts/new-note.ps1`.')
     }
