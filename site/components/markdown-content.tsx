@@ -3,6 +3,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { assetHref, encodePath, pageHref } from "@/lib/site";
+import { isSourceFile } from "@/lib/source-files";
 
 type MarkdownContentProps = {
   content: string;
@@ -21,6 +22,12 @@ function resolveAsset(relativePath: string, source: string): string {
   if (pathname.startsWith("/") || /^[a-z]+:/i.test(pathname)) return source;
   const assetPath = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
   return `${assetHref(`/note-assets/${encodePath(assetPath)}`)}${hash ? `#${hash}` : ""}`;
+}
+
+function resolveSourceLink(relativePath: string, href: string): string {
+  const [pathname, hash = ""] = href.split("#");
+  const target = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
+  return `${assetHref(`/code/${encodePath(target)}/index.html`)}${hash ? `#${hash}` : ""}`;
 }
 
 type MarkdownNode = {
@@ -55,6 +62,13 @@ export function MarkdownContent({ content, relativePath }: MarkdownContentProps)
           }
           if (/^https?:\/\//i.test(href)) {
             return <a href={href} target="_blank" rel="noreferrer" {...props}>{children}</a>;
+          }
+          if (!href.startsWith("#") && !/^[a-z]+:/i.test(href)) {
+            const pathname = href.split("#")[0];
+            const target = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
+            if (isSourceFile(target)) {
+              return <a href={resolveSourceLink(relativePath, href)} {...props}>{children}</a>;
+            }
           }
           if (!href.startsWith("#") && !/^[a-z]+:/i.test(href)) {
             return <a href={resolveAsset(relativePath, href)} {...props}>{children}</a>;

@@ -17,13 +17,14 @@ export type Note = {
 };
 
 const notesDirectory = path.resolve(process.cwd(), "..", "notes");
+const ignoredDirectories = new Set([".venv", "node_modules", "__pycache__", ".git"]);
 
 async function collectMarkdownFiles(directory: string): Promise<string[]> {
   const entries = await fs.readdir(directory, { withFileTypes: true });
   const files = await Promise.all(
     entries.map(async (entry) => {
       const entryPath = path.join(directory, entry.name);
-      if (entry.isDirectory()) return collectMarkdownFiles(entryPath);
+      if (entry.isDirectory()) return ignoredDirectories.has(entry.name) ? [] : collectMarkdownFiles(entryPath);
       return entry.isFile() && entry.name.toLowerCase().endsWith(".md") ? [entryPath] : [];
     }),
   );
