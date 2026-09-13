@@ -27,7 +27,7 @@ function resolveAsset(relativePath: string, source: string): string {
 function resolveSourceLink(relativePath: string, href: string): string {
   const [pathname, hash = ""] = href.split("#");
   const target = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
-  return `${assetHref(`/code/${encodePath(target)}/index.html`)}${hash ? `#${hash}` : ""}`;
+  return `${assetHref(`/code/${encodePath(target)}/`)}${hash ? `#${hash}` : ""}`;
 }
 
 type MarkdownNode = {
