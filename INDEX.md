@@ -9,9 +9,18 @@
       - [Git 团队协作与回滚手册](notes/30-resources/tools/git/git使用手册.md)
     - `hello-agents/`
       - `code/`
+        - `chapter6/`
+          - `AgentScopeDemo/`
+            - [AgentScope 三国狼人杀案例](notes/30-resources/tools/hello-agents/code/chapter6/AgentScopeDemo/README.md)
+          - `AutoGenDemo/`
+            - [AutoGen 软件开发团队协作案例](notes/30-resources/tools/hello-agents/code/chapter6/AutoGenDemo/README.md)
         - [Hello Agents 代码环境](notes/30-resources/tools/hello-agents/code/README.md)
       - `source-notes/`
         - [第一章：第一个智能旅行助手](notes/30-resources/tools/hello-agents/source-notes/chapter1-first-agent.md)
         - [第二章：ELIZA 规则型聊天机器人](notes/30-resources/tools/hello-agents/source-notes/chapter2-eliza.md)
         - [第三章：语言模型基础](notes/30-resources/tools/hello-agents/source-notes/chapter3-language-model-foundations.md)
         - [第四章：智能体经典范式](notes/30-resources/tools/hello-agents/source-notes/chapter4-classic-agent-paradigms.md)
+        - [第六章：AgentScope 多智能体狼人杀](notes/30-resources/tools/hello-agents/source-notes/chapter6-agentscope-werewolf.md)
+        - [第六章：AutoGen 软件开发团队协作](notes/30-resources/tools/hello-agents/source-notes/chapter6-autogen-software-team.md)
+        - [第六章：CAMEL 角色扮演协作创作](notes/30-resources/tools/hello-agents/source-notes/chapter6-camel-role-playing.md)
+        - [第六章：LangGraph 智能搜索助手](notes/30-resources/tools/hello-agents/source-notes/chapter6-langgraph-search-assistant.md)
