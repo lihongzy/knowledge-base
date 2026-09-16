@@ -36,25 +36,25 @@ export default async function SourcePage({ params }: { params: Promise<{ path: s
   });
 
   return (
-    <div className="code-shell">
-      <nav className="breadcrumbs" aria-label="面包屑">
-        <Link href={pageHref("/")}>知识库</Link>
+    <div className="mx-auto w-[min(1360px,calc(100%_-_64px))] pt-[34px] pb-[100px] max-sm:w-[calc(100%_-_28px)] max-sm:pt-[24px]">
+      <nav className="mb-[34px] flex flex-wrap gap-[9px] font-mono text-xs text-ink-muted max-sm:mb-[26px]" aria-label="面包屑">
+        <Link className="hover:text-pine" href={pageHref("/")}>知识库</Link>
         <span>/</span>
         <span>源码</span>
         {segments.slice(0, -1).map((segment, index) => <span key={`${segment}-${index}`}>/ {segment}</span>)}
       </nav>
-      <header className="code-header">
+      <header className="mb-[22px] border-b border-line pb-[22px]">
         <div>
-          <p className="code-language">{extension}</p>
-          <h1>{fileName}</h1>
-          <p>{source.relativePath}</p>
+          <p className="mb-3 font-mono text-xs tracking-[1.2px] text-brand">{extension}</p>
+          <h1 className="m-0 text-[34px] font-semibold max-sm:text-[27px]">{fileName}</h1>
+          <p className="mt-[13px] font-mono text-xs text-ink-muted [overflow-wrap:anywhere]">{source.relativePath}</p>
         </div>
       </header>
       <section className="code-frame" aria-label={`${fileName} 源码`}>
-        <div className="code-toolbar">
-          <span>{fileName}</span>
-          <div className="code-toolbar-actions">
-            <span>{sourceLines.length} 行</span>
+        <div className="sticky top-0 z-10 flex min-h-[52px] items-center justify-between gap-3 rounded-t-[4px] border-b border-[rgba(232,234,219,0.14)] bg-[#1b3028] px-4 py-[9px] font-mono text-[11px] text-[#aab8aa] max-sm:px-[11px]">
+          <span className="text-xs text-[#e0e9dc]">{fileName}</span>
+          <div className="flex items-center gap-[14px] max-sm:gap-[9px]">
+            <span className="whitespace-nowrap text-[#72877c]">{sourceLines.length} 行</span>
             <CopySourceButton source={source.content} />
           </div>
         </div>
