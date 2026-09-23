@@ -1,4 +1,9 @@
-openai>=1.66.0
+# HelloAgents 框架（chapter7+ 核心依赖，当前 venv 实装 1.0.0）
+# 注意：hello-agents 要求 openai<2.0.0，安装时会将 openai 从 3.x 降级到 1.x
+hello-agents>=1.0.0
+
+# openai 下限保持 1.66.0；受 hello-agents 约束，上限不得超过 2.0
+openai>=1.66.0,<2.0.0
 python-dotenv>=1.0.0
 requests>=2.31.0
 tavily-python>=0.3.0

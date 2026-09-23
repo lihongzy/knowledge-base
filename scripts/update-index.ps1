@@ -1,6 +1,10 @@
 [CmdletBinding()]
 param()
 
+# NOTE: Keep this file ASCII-only in source text (including comments).
+# Windows PowerShell 5.1 loads BOM-less .ps1 files using the ANSI code page (GBK on zh-CN),
+# which silently corrupts non-ASCII characters and can swallow following ASCII bytes/newlines.
+
 $repositoryRoot = Split-Path -Parent $PSScriptRoot
 $notesRoot = Join-Path $repositoryRoot 'notes'
 $indexPath = Join-Path $repositoryRoot 'INDEX.md'
@@ -32,7 +36,7 @@ else {
         $emittedDirectories = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
         foreach ($file in $files) {
             $relative = $file.FullName.Substring($notesRoot.Length).TrimStart('\', '/')
-            $segments = $relative -split '[\\\\/]'
+            $segments = $relative -split '[\\/]'
             $directorySegments = @()
             if ($segments.Count -gt 1) {
                 $directorySegments = @($segments[0..($segments.Count - 2)])
@@ -57,5 +61,6 @@ else {
     }
 }
 
-Set-Content -LiteralPath $indexPath -Value ($lines -join [Environment]::NewLine) -Encoding utf8NoBOM
+# Write UTF-8 without BOM via .NET (Set-Content -Encoding utf8NoBOM only exists in PowerShell 6+)
+[System.IO.File]::WriteAllText($indexPath, ($lines -join [Environment]::NewLine) + [Environment]::NewLine, [System.Text.UTF8Encoding]::new($false))
 Write-Output "Updated $indexPath"

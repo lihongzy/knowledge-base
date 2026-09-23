@@ -14,6 +14,11 @@ site/coverage/
 
 # Local site configuration
 site/.env*
+
+# Local environment files containing secrets (keep the .env.example templates)
+.env
+.env.*
+!.env.example
 !site/.env.example
 
 # AI-generated temporary artifacts and cloned repositories

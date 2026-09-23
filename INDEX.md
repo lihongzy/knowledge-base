@@ -24,3 +24,7 @@
         - [第六章：AutoGen 软件开发团队协作](notes/30-resources/tools/hello-agents/source-notes/chapter6-autogen-software-team.md)
         - [第六章：CAMEL 角色扮演协作创作](notes/30-resources/tools/hello-agents/source-notes/chapter6-camel-role-playing.md)
         - [第六章：LangGraph 智能搜索助手](notes/30-resources/tools/hello-agents/source-notes/chapter6-langgraph-search-assistant.md)
+        - [第七章：四种 Agent 范式的框架化重写](notes/30-resources/tools/hello-agents/source-notes/chapter7-agent-paradigms-rewrite.md)
+        - [第七章：HelloAgents 框架与环境搭建](notes/30-resources/tools/hello-agents/source-notes/chapter7-helloagents-framework-setup.md)
+        - [第七章：工具层重写——计算器与多源搜索](notes/30-resources/tools/hello-agents/source-notes/chapter7-tools-rewrite.md)
+        - [第七章：hello-agents 1.0.0 兼容性踩坑录](notes/30-resources/tools/hello-agents/source-notes/chapter7-v1.0.0-compat-pitfalls.md)
