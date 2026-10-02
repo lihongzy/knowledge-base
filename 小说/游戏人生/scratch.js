@@ -1,3 +1,4 @@
+const { existsSync } = require("fs");
 const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs/promises");
@@ -35,7 +36,7 @@ const HEADERS = {
     "user-agent":
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
     cookie:
-        "jieqiVisitId=article_articleviews%3D9; user_tz=Asia%2FShanghai; jieqiSearchCss=497473.4Bc-JCLFPxTpuaf2DO5lYqOC4dDJy873Pj7CvnezMLg; jieqiSearchJs=497473.v5q381u8pI2AE0qRUq8DRSnjt0sW_hALfkjHAfvgDzQ; cf_clearance=gjJeXxlCT9yt5pkWLM_lLdW_QsU8OOpm3zOpek7xPiE-1790904186-1.2.1.1-C4daJsA9d8pHBerLisiEXmK8LyUrvfQ4HYgdfU7vuo_clz8RNBh2XKIdMms9IooSLBz_AA2kNjaEQe68.mkT0vBEFifrikNMOEPSyxRp5IUqfXpe8qQs30IaRgwEp2B.ysO170F0tGoy2jsjgqiNPon3cyfxQnJ7VH4CmBJUCRWpUI0e_GtTEj2sLBBAqSLsDjyaE9XoNqRe08l.Gw9SpEEqtOiJJIBUtCfgvcilzCSbO1hi9az1URQ3peRvaco4C7JNcNh5hMd.HGpsexDMGA3rUvrVJ35I4ZntvAtblonr.PXGE2jviF8HXNzSz9BfRb9dBFjMDoI_cHs2FUcAABpEQcam5uM7.6Q4r.yWPTk; jieqiRecentRead=9.2046.0.1.1790904190.0; jieqiSearchTicket=3654f834b354e9b3b2f22bd444736084df27c4821c91c684.Bo5jv8QSLyj4WqwTOj737mlOEQiyyqg-l46cRXsAOo8",
+        "user_tz=Asia%2FShanghai; jieqiSearchCss=497476.f8Muxsx5j63EEbBleDZWL1ZLKax38YE5o-9RsPhJREQ; jieqiSearchJs=497476.UiIhFLhCkP8_JQ4_75DV23eQD_CvGDUXQ0qoUUvOsBY; cf_clearance=lW08_D6sDRN3vSMw73TUesJIHs3dyr3vqo9arfFxC0w-1790915479-1.2.1.1-xt0Fr6oBIDlBGtmLZ5gm1MnFchJ7Ge8ItufrJ.8ln1hlhNLJyrWKdVpNdejPYHd9iPak_dYlu3rYEhCf7hnAhJa.IHI6h.nIUDhRfAdzRD.Q2QoHL12Mx.bcyj9RT43wxKJhoZGCpKysf4LMdDSw947345hL1e90.6x7yqyB9JDxh3.n78EDWBnJbkHBDfKhKws902l0HyoG_RTZivmhhESLI_.B9mmb6zV_1UfSUgL_f5SAn3qT6tHR1.I2NkeEXnsZ4YcKKwTYC7Ggzzrw24COrKXCkzKc3AdOefBKw6wkqzMPxsVF9TW7F6kLhAKy8FcjGU58NGsmRbg41EgvFhH_xHCR_l4LD_HgJnYHMv8; jieqiSearchTicket=6f285663738536bdb475c5eb64c8be09c1d1da840ad4045e.dobM0eRLS4aXHKxAjJp0rpZhMHY1FnZNFu7m90D7Idc; jieqiRecentRead=9.2082.0.2.1790915501.0",
 };
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -68,8 +69,14 @@ async function fetchCatalog() {
             const $a = $(a);
             const title = $a.text().trim();
             const href = $a.attr("href");
-            // 跳过无标题，以及 javascript:cid(0) 这类非真实链接（付费/加密章节）
-            if (!title || !href || !href.startsWith("/")) return;
+            if (!title) return;
+            // 锁定章节：目录里 href 是 javascript:cid(0)，没有真实链接。
+            // 但它们并非付费内容，从“上一章末页”的下一页链接可解析出真实地址，
+            // 这里先保留占位，稍后由 resolveLockedChapters 补齐。
+            if (!href || !href.startsWith("/")) {
+                chapters.push({ title, url: null, locked: true });
+                return;
+            }
 
             chapters.push({ title, url: new URL(href, BASE_URL).href });
         });
@@ -78,6 +85,59 @@ async function fetchCatalog() {
     });
 
     return volumes;
+}
+
+// 从“上一章”URL 出发，跟完同章分页后取末页指向下一章的链接（base id 不同）
+// 这是锁定章节（javascript:cid(0)）获取真实地址的唯一途径
+async function findNextChapterUrl(prevUrl) {
+    const base = chapterBaseId(prevUrl);
+    let pageUrl = prevUrl;
+    let guard = 0;
+    while (pageUrl && guard++ < 50) {
+        const { data: html } = await getRequest(pageUrl);
+        const $ = cheerio.load(html);
+
+        let sameChapterNext = null;
+        let outsideNext = null;
+        $(".mlfy_page a").each((_, a) => {
+            const href = $(a).attr("href");
+            if (!href || !/下一页/.test($(a).text().trim())) return;
+            const abs = new URL(href, BASE_URL).href;
+            if (chapterBaseId(abs) === base) sameChapterNext = abs;
+            else outsideNext = abs;
+        });
+
+        if (sameChapterNext) {
+            pageUrl = sameChapterNext;
+            await sleep(REQUEST_DELAY);
+            continue;
+        }
+        if (outsideNext) return outsideNext;
+        throw new Error("末页未找到指向下一章的链接");
+    }
+    throw new Error("翻页次数超限");
+}
+
+// 按阅读顺序解析所有锁定章节的真实 URL（连续锁定也能链式解析）
+async function resolveLockedChapters(volumes) {
+    const flat = volumes.flatMap((vol) => vol.chapters);
+    let resolved = 0;
+    for (let i = 1; i < flat.length; i++) {
+        const ch = flat[i];
+        if (!ch.locked) continue;
+        const prev = flat[i - 1];
+        if (!prev.url) continue; // 上一章也未解析，无法定位，保留锁定状态跳过
+        try {
+            ch.url = await findNextChapterUrl(prev.url);
+            delete ch.locked;
+            resolved += 1;
+            console.log(`  解析锁定章节「${ch.title}」 => ${ch.url}`);
+        } catch (err) {
+            console.warn(`  无法解析锁定章节「${ch.title}」: ${err.message}`);
+        }
+        await sleep(REQUEST_DELAY);
+    }
+    return resolved;
 }
 
 // 从 /novel/9/2041.html 或 /novel/9/2041_2.html 提取章节基础 id（2041）
@@ -228,22 +288,27 @@ async function writeManifest(volumes) {
 
 async function runManifestOnly() {
     const volumes = await fetchCatalog();
+    await resolveLockedChapters(volumes);
     const manifest = await writeManifest(volumes);
     const total = manifest.volumes.reduce((n, v) => n + v.chapters.length, 0);
     console.log(`已生成 novel.json：${manifest.volumes.length} 卷，${total} 章。`);
 }
 
 async function main() {
-    // 命令：node scratch.js manifest        仅生成 novel.json
+    // 命令：node scratch.js manifest        仅生成 novel.json（含锁定章节解析）
+    //       node scratch.js missing       只补抓本地尚不存在的章节
     //       node scratch.js [起始序号] [章数]  抓取正文（默认从第 1 章、全部）
-    if (process.argv[2] === "manifest") return runManifestOnly();
+    const mode = process.argv[2];
+    if (mode === "manifest") return runManifestOnly();
+    const onlyMissing = mode === "missing";
 
-    const startIndex = Number(process.argv[2] || 1);
-    const limit = Number(process.argv[3] || Infinity);
+    const startIndex = onlyMissing ? 1 : Number(process.argv[2] || 1);
+    const limit = onlyMissing ? Infinity : Number(process.argv[3] || Infinity);
 
     await fs.mkdir(IMAGES_DIR, { recursive: true });
 
     const volumes = await fetchCatalog();
+    await resolveLockedChapters(volumes);
     // 每次抓取都刷新清单，保证站点卷/章结构与文件名同步
     await writeManifest(volumes);
 
@@ -253,6 +318,11 @@ async function main() {
     let done = 0;
     for (let i = startIndex - 1; i < all.length && done < limit; i++) {
         const ch = all[i];
+        if (!ch.url) {
+            console.warn(`[${String(ch.seq).padStart(3, "0")}] 跳过（链接未能解析）：${ch.title}`);
+            continue;
+        }
+        if (onlyMissing && existsSync(path.join(OUTPUT_DIR, ch.file))) continue;
         console.log(`[${String(ch.seq).padStart(3, "0")}] ${ch.title}`);
 
         try {
