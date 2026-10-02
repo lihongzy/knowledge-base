@@ -5,12 +5,18 @@ Thumbs.db
 # Generated logs
 *.log
 
+# Node.js dependencies (any directory, e.g. 小说/游戏人生/node_modules)
+node_modules/
+
 # Generated Next.js files
 site/.next/
 site/out/
 site/public/note-assets/
-site/node_modules/
+site/public/novel-assets/
 site/coverage/
+
+# Node.js dependencies (site/, 小说/*/ tooling)
+node_modules/
 
 # Local site configuration
 site/.env*
