@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "dev": "node scripts/copy-note-assets.mjs && next dev",
-    "prebuild": "node scripts/copy-note-assets.mjs",
+    "dev": "node scripts/copy-note-assets.mjs && node scripts/copy-novel-assets.mjs && next dev",
+    "prebuild": "node scripts/copy-note-assets.mjs && node scripts/copy-novel-assets.mjs",
     "build": "next build",
     "start": "npx serve out"
   },

@@ -21,7 +21,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <span className="font-mono text-xs tracking-[1px] text-brand">MENG</span>
             <strong className="text-[17px] font-bold">梦梦的知识库</strong>
           </Link>
-          <p className="m-0 font-mono text-[11px] text-ink-muted max-sm:hidden">Personal notes, carefully kept.</p>
+          <nav className="flex items-center gap-[22px] font-mono text-xs">
+            <Link className="text-ink-muted no-underline hover:text-pine" href={pageHref("/")}>笔记</Link>
+            <Link className="text-ink-muted no-underline hover:text-pine" href={pageHref("/novels/")}>小说</Link>
+            <p className="m-0 max-sm:hidden">Personal notes, carefully kept.</p>
+          </nav>
         </header>
         <main>{children}</main>
         <footer className="border-t border-line px-[6vw] py-[25px] font-mono text-[11px] text-ink-muted">Built from local Markdown notes.</footer>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { categoryFor, categoryLabel, getAllNotes } from "@/lib/notes";
+import { getNovels, novelChapterCount } from "@/lib/novels";
 import { encodePath, pageHref } from "@/lib/site";
 
 function directoryFor(relativePath: string): string {
@@ -8,6 +9,7 @@ function directoryFor(relativePath: string): string {
 
 export default async function HomePage() {
   const notes = await getAllNotes();
+  const novels = await getNovels();
   const categories = new Map<string, typeof notes>();
   for (const note of notes) {
     const category = categoryFor(note);
@@ -54,6 +56,25 @@ export default async function HomePage() {
       </section>
 
       {notes.length === 0 && <p className="py-[80px] text-center text-ink-muted">暂时还没有可展示的笔记。</p>}
+
+      {novels.length > 0 && (
+        <section className="mt-[64px] border-t-2 border-ink pt-[26px]" aria-label="小说书架">
+          <div className="flex items-baseline justify-between gap-5">
+            <h2 className="m-0 text-[25px] font-semibold">小说</h2>
+            <Link className="font-mono text-xs text-pine hover:underline" href={pageHref("/novels/")}>全部小说 →</Link>
+          </div>
+          <ul className="mt-[16px] list-none p-0">
+            {novels.map((novel) => (
+              <li className="border-t border-dotted border-line py-3" key={novel.id}>
+                <Link className="text-[17px] decoration-1 hover:text-pine" href={pageHref(`/novels/${encodePath(novel.slug)}/`)}>
+                  {novel.title}
+                </Link>
+                <span className="ml-[12px] font-mono text-[11px] text-ink-muted">{novel.volumes.length} 卷 · {novelChapterCount(novel)} 章</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   );
 }

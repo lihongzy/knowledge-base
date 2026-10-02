@@ -8,6 +8,8 @@ import { isSourceFile } from "@/lib/source-files";
 type MarkdownContentProps = {
   content: string;
   relativePath: string;
+  // 静态资源根路径：笔记默认 /note-assets，小说传入 /novel-assets
+  assetPrefix?: string;
 };
 
 function resolveInternalLink(relativePath: string, href: string): string {
@@ -17,11 +19,11 @@ function resolveInternalLink(relativePath: string, href: string): string {
   return `${pageHref(`/notes/${encodePath(withoutExtension)}/`)}${hash ? `#${hash}` : ""}`;
 }
 
-function resolveAsset(relativePath: string, source: string): string {
+function resolveAsset(relativePath: string, source: string, assetPrefix = "/note-assets"): string {
   const [pathname, hash = ""] = source.split("#");
   if (pathname.startsWith("/") || /^[a-z]+:/i.test(pathname)) return source;
   const assetPath = path.posix.normalize(path.posix.join(path.posix.dirname(relativePath), pathname));
-  return `${assetHref(`/note-assets/${encodePath(assetPath)}`)}${hash ? `#${hash}` : ""}`;
+  return `${assetHref(`${assetPrefix}/${encodePath(assetPath)}`)}${hash ? `#${hash}` : ""}`;
 }
 
 function resolveSourceLink(relativePath: string, href: string): string {
@@ -51,7 +53,7 @@ function remarkAlerts() {
   };
 }
 
-export function MarkdownContent({ content, relativePath }: MarkdownContentProps) {
+export function MarkdownContent({ content, relativePath, assetPrefix = "/note-assets" }: MarkdownContentProps) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm, remarkAlerts]}
@@ -71,11 +73,11 @@ export function MarkdownContent({ content, relativePath }: MarkdownContentProps)
             }
           }
           if (!href.startsWith("#") && !/^[a-z]+:/i.test(href)) {
-            return <a href={resolveAsset(relativePath, href)} {...props}>{children}</a>;
+            return <a href={resolveAsset(relativePath, href, assetPrefix)} {...props}>{children}</a>;
           }
           return <a href={href} {...props}>{children}</a>;
         },
-        img: ({ src, alt = "" }) => <img src={resolveAsset(relativePath, typeof src === "string" ? src : "")} alt={alt} />,
+        img: ({ src, alt = "" }) => <img src={resolveAsset(relativePath, typeof src === "string" ? src : "", assetPrefix)} alt={alt} />,
       }}
     >
       {content}

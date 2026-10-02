@@ -1,0 +1,963 @@
+{
+  "id": "游戏人生",
+  "slug": "no-game-no-life",
+  "title": "游戏人生 NO GAME NO LIFE",
+  "sourceCatalog": "https://www.linovelib.com/novel/9/catalog",
+  "volumes": [
+    {
+      "title": "游戏人生 NO GAME NO LIFE 1 听说游戏玩家兄妹要征服幻想世界",
+      "chapters": [
+        {
+          "seq": 1,
+          "slug": "001",
+          "title": "插图",
+          "file": "001-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118061.html"
+        },
+        {
+          "seq": 2,
+          "slug": "002",
+          "title": "序章",
+          "file": "002-序章.md",
+          "url": "https://www.linovelib.com/novel/9/2041.html"
+        },
+        {
+          "seq": 3,
+          "slug": "003",
+          "title": "第一章 外行人",
+          "file": "003-第一章 外行人.md",
+          "url": "https://www.linovelib.com/novel/9/2042.html"
+        },
+        {
+          "seq": 4,
+          "slug": "004",
+          "title": "第二章 挑战者",
+          "file": "004-第二章 挑战者.md",
+          "url": "https://www.linovelib.com/novel/9/2043.html"
+        },
+        {
+          "seq": 5,
+          "slug": "005",
+          "title": "第三章 老手",
+          "file": "005-第三章 老手.md",
+          "url": "https://www.linovelib.com/novel/9/2044.html"
+        },
+        {
+          "seq": 6,
+          "slug": "006",
+          "title": "第四章 国王",
+          "file": "006-第四章 国王.md",
+          "url": "https://www.linovelib.com/novel/9/2045.html"
+        },
+        {
+          "seq": 7,
+          "slug": "007",
+          "title": "终章",
+          "file": "007-终章.md",
+          "url": "https://www.linovelib.com/novel/9/2046.html"
+        },
+        {
+          "seq": 8,
+          "slug": "008",
+          "title": "后记",
+          "file": "008-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2047.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 2 游戏玩家兄妹似乎盯上兽耳女的国家了",
+      "chapters": [
+        {
+          "seq": 9,
+          "slug": "009",
+          "title": "插图",
+          "file": "009-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118062.html"
+        },
+        {
+          "seq": 10,
+          "slug": "010",
+          "title": "序章",
+          "file": "010-序章.md",
+          "url": "https://www.linovelib.com/novel/9/2049.html"
+        },
+        {
+          "seq": 11,
+          "slug": "011",
+          "title": "第一章 布局",
+          "file": "011-第一章 布局.md",
+          "url": "https://www.linovelib.com/novel/9/2050.html"
+        },
+        {
+          "seq": 12,
+          "slug": "012",
+          "title": "第二章 一步",
+          "file": "012-第二章 一步.md",
+          "url": "https://www.linovelib.com/novel/9/2051.html"
+        },
+        {
+          "seq": 13,
+          "slug": "013",
+          "title": "第三章 弃子",
+          "file": "013-第三章 弃子.md",
+          "url": "https://www.linovelib.com/novel/9/2052.html"
+        },
+        {
+          "seq": 14,
+          "slug": "014",
+          "title": "第四章 将死",
+          "file": "014-第四章 将死.md",
+          "url": "https://www.linovelib.com/novel/9/2053.html"
+        },
+        {
+          "seq": 15,
+          "slug": "015",
+          "title": "伪结局",
+          "file": "015-伪结局.md",
+          "url": "https://www.linovelib.com/novel/9/2054.html"
+        },
+        {
+          "seq": 16,
+          "slug": "016",
+          "title": "后记",
+          "file": "016-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2055.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 3 游戏玩家兄妹的另一半似乎消失了……？",
+      "chapters": [
+        {
+          "seq": 17,
+          "slug": "017",
+          "title": "插图",
+          "file": "017-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118063.html"
+        },
+        {
+          "seq": 18,
+          "slug": "018",
+          "title": "读取纪录",
+          "file": "018-读取纪录.md",
+          "url": "https://www.linovelib.com/novel/9/2057.html"
+        },
+        {
+          "seq": 19,
+          "slug": "019",
+          "title": "第一章 解离法",
+          "file": "019-第一章 解离法.md",
+          "url": "https://www.linovelib.com/novel/9/2058.html"
+        },
+        {
+          "seq": 20,
+          "slug": "020",
+          "title": "第二章 指向法",
+          "file": "020-第二章 指向法.md",
+          "url": "https://www.linovelib.com/novel/9/2059.html"
+        },
+        {
+          "seq": 21,
+          "slug": "021",
+          "title": "第三章 诱导法",
+          "file": "021-第三章 诱导法.md",
+          "url": "https://www.linovelib.com/novel/9/2060.html"
+        },
+        {
+          "seq": 22,
+          "slug": "022",
+          "title": "真结局",
+          "file": "022-真结局.md",
+          "url": "https://www.linovelib.com/novel/9/2062.html"
+        },
+        {
+          "seq": 23,
+          "slug": "023",
+          "title": "后记",
+          "file": "023-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2063.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 4 游戏玩家兄妹遭遇现实恋爱游戏而逃之夭夭了",
+      "chapters": [
+        {
+          "seq": 24,
+          "slug": "024",
+          "title": "插图",
+          "file": "024-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118064.html"
+        },
+        {
+          "seq": 25,
+          "slug": "025",
+          "title": "序",
+          "file": "025-序.md",
+          "url": "https://www.linovelib.com/novel/9/2065.html"
+        },
+        {
+          "seq": 26,
+          "slug": "026",
+          "title": "简易模式",
+          "file": "026-简易模式.md",
+          "url": "https://www.linovelib.com/novel/9/2066.html"
+        },
+        {
+          "seq": 27,
+          "slug": "027",
+          "title": "第一章 恶魔",
+          "file": "027-第一章 恶魔.md",
+          "url": "https://www.linovelib.com/novel/9/2067.html"
+        },
+        {
+          "seq": 28,
+          "slug": "028",
+          "title": "第二章 太阳",
+          "file": "028-第二章 太阳.md",
+          "url": "https://www.linovelib.com/novel/9/2068.html"
+        },
+        {
+          "seq": 29,
+          "slug": "029",
+          "title": "第三章 N帝",
+          "file": "029-第三章 N帝.md",
+          "url": "https://www.linovelib.com/novel/9/2069.html"
+        },
+        {
+          "seq": 30,
+          "slug": "030",
+          "title": "第四章 愚者",
+          "file": "030-第四章 愚者.md",
+          "url": "https://www.linovelib.com/novel/9/2070.html"
+        },
+        {
+          "seq": 31,
+          "slug": "031",
+          "title": "中途结束",
+          "file": "031-中途结束.md",
+          "url": "https://www.linovelib.com/novel/9/2071.html"
+        },
+        {
+          "seq": 32,
+          "slug": "032",
+          "title": "后记",
+          "file": "032-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2072.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 5 游戏玩家兄妹似乎讨厌继承破关纪录",
+      "chapters": [
+        {
+          "seq": 33,
+          "slug": "033",
+          "title": "插图",
+          "file": "033-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118065.html"
+        },
+        {
+          "seq": 34,
+          "slug": "034",
+          "title": "正常开始",
+          "file": "034-正常开始.md",
+          "url": "https://www.linovelib.com/novel/9/2074.html"
+        },
+        {
+          "seq": 35,
+          "slug": "035",
+          "title": "第一章 尝试",
+          "file": "035-第一章 尝试.md",
+          "url": "https://www.linovelib.com/novel/9/2075.html"
+        },
+        {
+          "seq": 36,
+          "slug": "036",
+          "title": "第二章 失败",
+          "file": "036-第二章 失败.md",
+          "url": "https://www.linovelib.com/novel/9/2076.html"
+        },
+        {
+          "seq": 37,
+          "slug": "037",
+          "title": "第三章 学习",
+          "file": "037-第三章 学习.md",
+          "url": "https://www.linovelib.com/novel/9/2077.html"
+        },
+        {
+          "seq": 38,
+          "slug": "038",
+          "title": "第四章 再尝试",
+          "file": "038-第四章 再尝试.md",
+          "url": "https://www.linovelib.com/novel/9/2078.html"
+        },
+        {
+          "seq": 39,
+          "slug": "039",
+          "title": "永不结束",
+          "file": "039-永不结束.md",
+          "url": "https://www.linovelib.com/novel/9/2079.html"
+        },
+        {
+          "seq": 40,
+          "slug": "040",
+          "title": "后记",
+          "file": "040-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2080.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 6 听说游戏玩家夫妇向世界挑战了",
+      "chapters": [
+        {
+          "seq": 41,
+          "slug": "041",
+          "title": "插图",
+          "file": "041-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118066.html"
+        },
+        {
+          "seq": 42,
+          "slug": "042",
+          "title": "开幕前话",
+          "file": "042-开幕前话.md",
+          "url": "https://www.linovelib.com/novel/9/2082.html"
+        },
+        {
+          "seq": 43,
+          "slug": "043",
+          "title": "第二章 1×1=无谋",
+          "file": "043-第二章 1×1=无谋.md",
+          "url": "https://www.linovelib.com/novel/9/2084.html"
+        },
+        {
+          "seq": 44,
+          "slug": "044",
+          "title": "第三章 1＋1=无亡",
+          "file": "044-第三章 1＋1=无亡.md",
+          "url": "https://www.linovelib.com/novel/9/2085.html"
+        },
+        {
+          "seq": 45,
+          "slug": "045",
+          "title": "第四章 1÷2=无傍",
+          "file": "045-第四章 1÷2=无傍.md",
+          "url": "https://www.linovelib.com/novel/9/2086.html"
+        },
+        {
+          "seq": 46,
+          "slug": "046",
+          "title": "第五章 1÷0=梦恋",
+          "file": "046-第五章 1÷0=梦恋.md",
+          "url": "https://www.linovelib.com/novel/9/2087.html"
+        },
+        {
+          "seq": 47,
+          "slug": "047",
+          "title": "开幕后话",
+          "file": "047-开幕后话.md",
+          "url": "https://www.linovelib.com/novel/9/2088.html"
+        },
+        {
+          "seq": 48,
+          "slug": "048",
+          "title": "后记",
+          "file": "048-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2089.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE BD特典",
+      "chapters": [
+        {
+          "seq": 49,
+          "slug": "049",
+          "title": "VOL.01 幕间 三次重复局面",
+          "file": "049-VOL.01 幕间 三次重复局面.md",
+          "url": "https://www.linovelib.com/novel/9/2091.html"
+        },
+        {
+          "seq": 50,
+          "slug": "050",
+          "title": "VOL.02 幕间",
+          "file": "050-VOL.02 幕间.md",
+          "url": "https://www.linovelib.com/novel/9/2092.html"
+        },
+        {
+          "seq": 51,
+          "slug": "051",
+          "title": "VOL.03 幕间 Highcard all Raise 前篇",
+          "file": "051-VOL.03 幕间 Highcard all Raise 前篇.md",
+          "url": "https://www.linovelib.com/novel/9/2093.html"
+        },
+        {
+          "seq": 52,
+          "slug": "052",
+          "title": "VOL.05 幕间 Highcard all Raise 后篇",
+          "file": "052-VOL.05 幕间 Highcard all Raise 后篇.md",
+          "url": "https://www.linovelib.com/novel/9/2094.html"
+        },
+        {
+          "seq": 53,
+          "slug": "053",
+          "title": "VOL.04 幕间 solo-play•coop-play（单人游戏，多人游戏？）",
+          "file": "053-VOL.04 幕间 solo-play•coop-play（单人游戏，多人游戏？）.md",
+          "url": "https://www.linovelib.com/novel/9/2095.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 短篇",
+      "chapters": [
+        {
+          "seq": 54,
+          "slug": "054",
+          "title": "漫画附送SS特别收录 五年前",
+          "file": "054-漫画附送SS特别收录 五年前.md",
+          "url": "https://www.linovelib.com/novel/9/2097.html"
+        },
+        {
+          "seq": 55,
+          "slug": "055",
+          "title": "Art Works 漫畫＆小说「扩增地球游戏」",
+          "file": "055-Art Works 漫畫＆小说「扩增地球游戏」.md",
+          "url": "https://www.linovelib.com/novel/9/169797.html"
+        },
+        {
+          "seq": 56,
+          "slug": "056",
+          "title": "ZERO 特典 漫画＆小说",
+          "file": "056-ZERO 特典 漫画＆小说.md",
+          "url": "https://www.linovelib.com/novel/9/169798.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 7 听说游戏玩家兄妹要巅覆定理",
+      "chapters": [
+        {
+          "seq": 57,
+          "slug": "057",
+          "title": "插图",
+          "file": "057-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118067.html"
+        },
+        {
+          "seq": 58,
+          "slug": "058",
+          "title": "理论上的开始",
+          "file": "058-理论上的开始.md",
+          "url": "https://www.linovelib.com/novel/9/2099.html"
+        },
+        {
+          "seq": 59,
+          "slug": "059",
+          "title": "第一章 倒叙形式",
+          "file": "059-第一章 倒叙形式.md",
+          "url": "https://www.linovelib.com/novel/9/2100.html"
+        },
+        {
+          "seq": 60,
+          "slug": "060",
+          "title": "第二章 过剩解释",
+          "file": "060-第二章 过剩解释.md",
+          "url": "https://www.linovelib.com/novel/9/2101.html"
+        },
+        {
+          "seq": 61,
+          "slug": "061",
+          "title": "第三章 误诱导法",
+          "file": "061-第三章 误诱导法.md",
+          "url": "https://www.linovelib.com/novel/9/2102.html"
+        },
+        {
+          "seq": 62,
+          "slug": "062",
+          "title": "第四章 奇妙滋味",
+          "file": "062-第四章 奇妙滋味.md",
+          "url": "https://www.linovelib.com/novel/9/2103.html"
+        },
+        {
+          "seq": 63,
+          "slug": "063",
+          "title": "实际上的结束",
+          "file": "063-实际上的结束.md",
+          "url": "https://www.linovelib.com/novel/9/2104.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 8 听说游戏玩家们将会接续布局",
+      "chapters": [
+        {
+          "seq": 64,
+          "slug": "064",
+          "title": "插图",
+          "file": "064-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118068.html"
+        },
+        {
+          "seq": 65,
+          "slug": "065",
+          "title": "继续游戏",
+          "file": "065-继续游戏.md",
+          "url": "https://www.linovelib.com/novel/9/2107.html"
+        },
+        {
+          "seq": 66,
+          "slug": "066",
+          "title": "第一章 不战战术",
+          "file": "066-第一章 不战战术.md",
+          "url": "https://www.linovelib.com/novel/9/2108.html"
+        },
+        {
+          "seq": 67,
+          "slug": "067",
+          "title": "第二章 不正胜利",
+          "file": "067-第二章 不正胜利.md",
+          "url": "https://www.linovelib.com/novel/9/2109.html"
+        },
+        {
+          "seq": 68,
+          "slug": "068",
+          "title": "第三章 不当解答",
+          "file": "068-第三章 不当解答.md",
+          "url": "https://www.linovelib.com/novel/9/2110.html"
+        },
+        {
+          "seq": 69,
+          "slug": "069",
+          "title": "第四章 正当选择",
+          "file": "069-第四章 正当选择.md",
+          "url": "https://www.linovelib.com/novel/9/2111.html"
+        },
+        {
+          "seq": 70,
+          "slug": "070",
+          "title": "理想结局",
+          "file": "070-理想结局.md",
+          "url": "https://www.linovelib.com/novel/9/2112.html"
+        },
+        {
+          "seq": 71,
+          "slug": "071",
+          "title": "后记",
+          "file": "071-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2113.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 9 听说游戏玩家兄妹要休息一回合",
+      "chapters": [
+        {
+          "seq": 72,
+          "slug": "072",
+          "title": "插图",
+          "file": "072-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118069.html"
+        },
+        {
+          "seq": 73,
+          "slug": "073",
+          "title": "略过开始",
+          "file": "073-略过开始.md",
+          "url": "https://www.linovelib.com/novel/9/2115.html"
+        },
+        {
+          "seq": 74,
+          "slug": "074",
+          "title": "第一章 停止悻问题",
+          "file": "074-第一章 停止悻问题.md",
+          "url": "https://www.linovelib.com/novel/9/2116.html"
+        },
+        {
+          "seq": 75,
+          "slug": "075",
+          "title": "第二章 归纳式结论",
+          "file": "075-第二章 归纳式结论.md",
+          "url": "https://www.linovelib.com/novel/9/2117.html"
+        },
+        {
+          "seq": 76,
+          "slug": "076",
+          "title": "第三章 演绎式决定",
+          "file": "076-第三章 演绎式决定.md",
+          "url": "https://www.linovelib.com/novel/9/2118.html"
+        },
+        {
+          "seq": 77,
+          "slug": "077",
+          "title": "第四章 乐观的预期",
+          "file": "077-第四章 乐观的预期.md",
+          "url": "https://www.linovelib.com/novel/9/2119.html"
+        },
+        {
+          "seq": 78,
+          "slug": "078",
+          "title": "一回合结束",
+          "file": "078-一回合结束.md",
+          "url": "https://www.linovelib.com/novel/9/2120.html"
+        },
+        {
+          "seq": 79,
+          "slug": "079",
+          "title": "后记",
+          "file": "079-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2121.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 外传 实用的战争游戏",
+      "chapters": [
+        {
+          "seq": 80,
+          "slug": "080",
+          "title": "插图",
+          "file": "080-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118070.html"
+        },
+        {
+          "seq": 81,
+          "slug": "081",
+          "title": "抽象的战争游戏",
+          "file": "081-抽象的战争游戏.md",
+          "url": "https://www.linovelib.com/novel/9/2123.html"
+        },
+        {
+          "seq": 82,
+          "slug": "082",
+          "title": "实用的战争游戏",
+          "file": "082-实用的战争游戏.md",
+          "url": "https://www.linovelib.com/novel/9/2124.html"
+        },
+        {
+          "seq": 83,
+          "slug": "083",
+          "title": "Threefold repetition",
+          "file": "083-Threefold repetition.md",
+          "url": "https://www.linovelib.com/novel/9/2125.html"
+        },
+        {
+          "seq": 84,
+          "slug": "084",
+          "title": "一对 or 红心同花顺",
+          "file": "084-一对 or 红心同花顺.md",
+          "url": "https://www.linovelib.com/novel/9/2126.html"
+        },
+        {
+          "seq": 85,
+          "slug": "085",
+          "title": "高牌全押【后篇】",
+          "file": "085-高牌全押【后篇】.md",
+          "url": "https://www.linovelib.com/novel/9/2128.html"
+        },
+        {
+          "seq": 86,
+          "slug": "086",
+          "title": "后记",
+          "file": "086-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2129.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 10 游戏玩家兄妹似乎被迫为过去付出代价",
+      "chapters": [
+        {
+          "seq": 87,
+          "slug": "087",
+          "title": "插图",
+          "file": "087-插图.md",
+          "url": "https://www.linovelib.com/novel/9/118071.html"
+        },
+        {
+          "seq": 88,
+          "slug": "088",
+          "title": "Re：Start",
+          "file": "088-Re：Start.md",
+          "url": "https://www.linovelib.com/novel/9/2131.html"
+        },
+        {
+          "seq": 89,
+          "slug": "089",
+          "title": "第一章 相对论",
+          "file": "089-第一章 相对论.md",
+          "url": "https://www.linovelib.com/novel/9/2132.html"
+        },
+        {
+          "seq": 90,
+          "slug": "090",
+          "title": "第二章 感悻论",
+          "file": "090-第二章 感悻论.md",
+          "url": "https://www.linovelib.com/novel/9/2133.html"
+        },
+        {
+          "seq": 91,
+          "slug": "091",
+          "title": "第三章 一般论",
+          "file": "091-第三章 一般论.md",
+          "url": "https://www.linovelib.com/novel/9/2134.html"
+        },
+        {
+          "seq": 92,
+          "slug": "092",
+          "title": "第四章 感Q论",
+          "file": "092-第四章 感Q论.md",
+          "url": "https://www.linovelib.com/novel/9/2135.html"
+        },
+        {
+          "seq": 93,
+          "slug": "093",
+          "title": "第五章 结果论",
+          "file": "093-第五章 结果论.md",
+          "url": "https://www.linovelib.com/novel/9/2136.html"
+        },
+        {
+          "seq": 94,
+          "slug": "094",
+          "title": "Crash／END",
+          "file": "094-Crash／END.md",
+          "url": "https://www.linovelib.com/novel/9/2137.html"
+        },
+        {
+          "seq": 95,
+          "slug": "095",
+          "title": "后记",
+          "file": "095-后记.md",
+          "url": "https://www.linovelib.com/novel/9/2138.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 11 游戏玩家兄妹似乎必须成为情侣才能离开",
+      "chapters": [
+        {
+          "seq": 96,
+          "slug": "096",
+          "title": "插图",
+          "file": "096-插图.md",
+          "url": "https://www.linovelib.com/novel/9/162152.html"
+        },
+        {
+          "seq": 97,
+          "slug": "097",
+          "title": "视讯开始播放",
+          "file": "097-视讯开始播放.md",
+          "url": "https://www.linovelib.com/novel/9/163397.html"
+        },
+        {
+          "seq": 98,
+          "slug": "098",
+          "title": "第一章 垂直思考",
+          "file": "098-第一章 垂直思考.md",
+          "url": "https://www.linovelib.com/novel/9/163398.html"
+        },
+        {
+          "seq": 99,
+          "slug": "099",
+          "title": "第二章 水平思考",
+          "file": "099-第二章 水平思考.md",
+          "url": "https://www.linovelib.com/novel/9/163399.html"
+        },
+        {
+          "seq": 100,
+          "slug": "100",
+          "title": "第三章 平行思考",
+          "file": "100-第三章 平行思考.md",
+          "url": "https://www.linovelib.com/novel/9/163400.html"
+        },
+        {
+          "seq": 101,
+          "slug": "101",
+          "title": "第四章 回转指向",
+          "file": "101-第四章 回转指向.md",
+          "url": "https://www.linovelib.com/novel/9/163401.html"
+        },
+        {
+          "seq": 102,
+          "slug": "102",
+          "title": "暂时的结局",
+          "file": "102-暂时的结局.md",
+          "url": "https://www.linovelib.com/novel/9/163402.html"
+        },
+        {
+          "seq": 103,
+          "slug": "103",
+          "title": "后记",
+          "file": "103-后记.md",
+          "url": "https://www.linovelib.com/novel/9/163403.html"
+        },
+        {
+          "seq": 104,
+          "slug": "104",
+          "title": "电子书籍特典 新写下的短篇",
+          "file": "104-电子书籍特典 新写下的短篇.md",
+          "url": "https://www.linovelib.com/novel/9/163734.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 12 游戏玩家兄妹似乎要挑战「魔王」了",
+      "chapters": [
+        {
+          "seq": 105,
+          "slug": "105",
+          "title": "插图",
+          "file": "105-插图.md",
+          "url": "https://www.linovelib.com/novel/9/184724.html"
+        },
+        {
+          "seq": 106,
+          "slug": "106",
+          "title": "第一章 魔王出现了",
+          "file": "106-第一章 魔王出现了.md",
+          "url": "https://www.linovelib.com/novel/9/185620.html"
+        },
+        {
+          "seq": 107,
+          "slug": "107",
+          "title": "第二章 勇者逃跑了",
+          "file": "107-第二章 勇者逃跑了.md",
+          "url": "https://www.linovelib.com/novel/9/185621.html"
+        },
+        {
+          "seq": 108,
+          "slug": "108",
+          "title": "第三章 勇者们的攻击",
+          "file": "108-第三章 勇者们的攻击.md",
+          "url": "https://www.linovelib.com/novel/9/185622.html"
+        },
+        {
+          "seq": 109,
+          "slug": "109",
+          "title": "RPG结局",
+          "file": "109-RPG结局.md",
+          "url": "https://www.linovelib.com/novel/9/185623.html"
+        },
+        {
+          "seq": 110,
+          "slug": "110",
+          "title": "后记",
+          "file": "110-后记.md",
+          "url": "https://www.linovelib.com/novel/9/185624.html"
+        },
+        {
+          "seq": 111,
+          "slug": "111",
+          "title": "电子书特典",
+          "file": "111-电子书特典.md",
+          "url": "https://www.linovelib.com/novel/9/185625.html"
+        }
+      ]
+    },
+    {
+      "title": "游戏人生 NO GAME NO LIFE 13 游戏玩家兄妹似乎要挑战「魔王」",
+      "chapters": [
+        {
+          "seq": 112,
+          "slug": "112",
+          "title": "插图",
+          "file": "112-插图.md",
+          "url": "https://www.linovelib.com/novel/9/319155.html"
+        },
+        {
+          "seq": 113,
+          "slug": "113",
+          "title": "序曲",
+          "file": "113-序曲.md",
+          "url": "https://www.linovelib.com/novel/9/326405.html"
+        },
+        {
+          "seq": 114,
+          "slug": "114",
+          "title": "第一章 死亡结局",
+          "file": "114-第一章 死亡结局.md",
+          "url": "https://www.linovelib.com/novel/9/326406.html"
+        },
+        {
+          "seq": 115,
+          "slug": "115",
+          "title": "第二章 无解死局",
+          "file": "115-第二章 无解死局.md",
+          "url": "https://www.linovelib.com/novel/9/326407.html"
+        },
+        {
+          "seq": 116,
+          "slug": "116",
+          "title": "第三章 真实结局",
+          "file": "116-第三章 真实结局.md",
+          "url": "https://www.linovelib.com/novel/9/326408.html"
+        },
+        {
+          "seq": 117,
+          "slug": "117",
+          "title": "第四章 天翻地覆",
+          "file": "117-第四章 天翻地覆.md",
+          "url": "https://www.linovelib.com/novel/9/326409.html"
+        },
+        {
+          "seq": 118,
+          "slug": "118",
+          "title": "终曲",
+          "file": "118-终曲.md",
+          "url": "https://www.linovelib.com/novel/9/326410.html"
+        },
+        {
+          "seq": 119,
+          "slug": "119",
+          "title": "后记",
+          "file": "119-后记.md",
+          "url": "https://www.linovelib.com/novel/9/331762.html"
+        },
+        {
+          "seq": 120,
+          "slug": "120",
+          "title": "插图",
+          "file": "120-插图.md",
+          "url": "https://www.linovelib.com/novel/9/331763.html"
+        },
+        {
+          "seq": 121,
+          "slug": "121",
+          "title": "特典 关于劳动",
+          "file": "121-特典 关于劳动.md",
+          "url": "https://www.linovelib.com/novel/9/331764.html"
+        },
+        {
+          "seq": 122,
+          "slug": "122",
+          "title": "特典 关于夏日祭",
+          "file": "122-特典 关于夏日祭.md",
+          "url": "https://www.linovelib.com/novel/9/331765.html"
+        },
+        {
+          "seq": 123,
+          "slug": "123",
+          "title": "特典 关于学园祭",
+          "file": "123-特典 关于学园祭.md",
+          "url": "https://www.linovelib.com/novel/9/331766.html"
+        },
+        {
+          "seq": 124,
+          "slug": "124",
+          "title": "特典 关于樱花",
+          "file": "124-特典 关于樱花.md",
+          "url": "https://www.linovelib.com/novel/9/331767.html"
+        },
+        {
+          "seq": 125,
+          "slug": "125",
+          "title": "特典 关于酱油",
+          "file": "125-特典 关于酱油.md",
+          "url": "https://www.linovelib.com/novel/9/331768.html"
+        }
+      ]
+    }
+  ]
+}

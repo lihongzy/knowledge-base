@@ -30,6 +30,12 @@ Uses a single-context layout. See `docs/agents/domain.md`.
 
 Markdown 笔记编写规则见 `docs/markdown-writing-rules.md`。
 
+## Novel corpus
+
+小说语料存放在仓库根目录 `小说/` 下，与 `notes/` 平级。每部小说一个子目录（如 `小说/游戏人生/`），内含 `novel.json` 卷章清单和 `chapters/` Markdown 正文，插图与正文保存在同一目录（`chapters/images/`）。
+
+小说不是笔记：不纳入 `scripts/update-index.ps1` 生成的 `INDEX.md`，而是由展示站点的 `/novels` 路由直接读取 `小说/` 下的数据渲染。
+
 ## Temporary artifacts
 
 AI 生成的临时文件和中间产物统一存放在 `temp/`。

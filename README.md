@@ -9,6 +9,7 @@ Personal knowledge notes stored as Markdown files.
 - `notes/20-areas/`: ongoing responsibilities and areas of interest.
 - `notes/30-resources/`: reference material, concepts, and learning notes.
 - `notes/40-archive/`: inactive or completed material kept for reference.
+- `小说/`: novel corpora (one folder per novel: `novel.json` + Markdown chapters with images); read by the site's `/novels` routes, not listed in `INDEX.md`.
 - `templates/`: reusable Markdown templates.
 - `scripts/`: commands for creating notes and rebuilding the index.
 
