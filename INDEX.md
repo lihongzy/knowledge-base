@@ -28,3 +28,5 @@
         - [第七章：HelloAgents 框架与环境搭建](notes/30-resources/tools/hello-agents/source-notes/chapter7-helloagents-framework-setup.md)
         - [第七章：工具层重写——计算器与多源搜索](notes/30-resources/tools/hello-agents/source-notes/chapter7-tools-rewrite.md)
         - [第七章：hello-agents 1.0.0 兼容性踩坑录](notes/30-resources/tools/hello-agents/source-notes/chapter7-v1.0.0-compat-pitfalls.md)
+    - `novel-scraper/`
+      - [linovelib 小说爬虫](notes/30-resources/tools/novel-scraper/linovelib-小说爬虫.md)

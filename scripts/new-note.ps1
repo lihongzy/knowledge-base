@@ -37,7 +37,8 @@ $now = Get-Date -Format 'yyyy-MM-dd'
 $templatePath = Join-Path $repositoryRoot 'templates/note.md'
 $content = Get-Content -LiteralPath $templatePath -Raw
 $content = $content.Replace('{{title}}', $Title).Replace('{{created}}', $now).Replace('{{updated}}', $now)
-Set-Content -LiteralPath $targetFile -Value $content -Encoding utf8NoBOM
+# Set-Content -Encoding utf8NoBOM only exists in PowerShell 6+; use .NET for PS 5.1 compatibility
+[System.IO.File]::WriteAllText($targetFile, $content, [System.Text.UTF8Encoding]::new($false))
 
 & (Join-Path $PSScriptRoot 'update-index.ps1')
 
