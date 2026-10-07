@@ -1,0 +1,22 @@
+import assert from "node:assert/strict";
+import { groupAgentChapters, chapterEntryTitle } from "../lib/agent-chapters.ts";
+
+const prefix = "30-resources/tools/hello-agents";
+const note = (path, title) => ({ relativePath: `${prefix}/${path}`, slug: path.replace(/\.md$/, "").split("/"), title, tags: [], content: "" });
+const notes = [note("source-notes/chapter7-tools.md", "第七章：工具"), note("code/chapter6/AgentScopeDemo/README.md", "代码案例"), note("source-notes/chapter6-agentscope.md", "第六章：AgentScope"), note("source-notes/chapter6-autogen.md", "第六章：AutoGen"), note("code/README.md", "代码环境"), note("source-notes/chapter2-eliza.md", "第二章：ELIZA"), note("misc.md", "其他")];
+const groups = groupAgentChapters(notes, prefix);
+assert.deepEqual(groups.map((g) => g.id), ["preparation", "chapter-2", "chapter-6", "chapter-7", "other"]);
+assert.equal(groups[2].learning.length, 2);
+assert.equal(groups[2].code.length, 1);
+assert.equal(groups[2].title, "第六章");
+assert.equal(groups.flatMap((g) => [...g.learning, ...g.code]).length, notes.length);
+assert.equal(chapterEntryTitle("第六章：AgentScope"), "AgentScope");
+assert.equal(chapterEntryTitle("普通标题"), "普通标题");
+const html = await (await fetch("http://127.0.0.1:3001/topics/agent/")).text();
+assert.ok(html.includes('id="chapter-6-title"'));
+const sixth = html.split('aria-labelledby="chapter-6-title"')[1].split('</section>')[0];
+for (const title of ["AgentScope 多智能体狼人杀", "AutoGen 软件开发团队协作", "CAMEL 角色扮演协作创作", "LangGraph 智能搜索助手", "AgentScope 三国狼人杀案例", "AutoGen 软件开发团队协作案例"]) assert.ok(sixth.includes(title), title);
+assert.ok(!sixth.includes("第六章："));
+assert.ok(html.includes('id="preparation-title"'));
+assert.ok(html.includes('id="chapter-7-title"'));
+console.log("PASS: chapter ordering, learning/code grouping, title cleanup, preparation, no lost entries, and live chapter 6 rendering");

@@ -51,10 +51,10 @@ export default async function SourcePage({ params }: { params: Promise<{ path: s
         </div>
       </header>
       <section className="code-frame" aria-label={`${fileName} 源码`}>
-        <div className="sticky top-0 z-10 flex min-h-[52px] items-center justify-between gap-3 rounded-t-[4px] border-b border-[rgba(232,234,219,0.14)] bg-[#1b3028] px-4 py-[9px] font-mono text-[11px] text-[#aab8aa] max-sm:px-[11px]">
-          <span className="text-xs text-[#e0e9dc]">{fileName}</span>
+        <div className="code-toolbar">
+          <span className="text-foreground">{fileName}</span>
           <div className="flex items-center gap-[14px] max-sm:gap-[9px]">
-            <span className="whitespace-nowrap text-[#72877c]">{sourceLines.length} 行</span>
+            <span className="whitespace-nowrap text-muted-foreground">{sourceLines.length} 行</span>
             <CopySourceButton source={source.content} />
           </div>
         </div>

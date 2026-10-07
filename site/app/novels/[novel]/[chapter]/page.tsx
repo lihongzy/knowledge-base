@@ -4,6 +4,7 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { NovelToc } from "@/components/novel-toc";
 import { flattenChapters, getChapterReading, getNovels, novelChapterCount } from "@/lib/novels";
 import { encodePath, pageHref } from "@/lib/site";
+import { parseNoteContent } from "@/lib/note-content";
 
 export const dynamicParams = false;
 
@@ -27,6 +28,7 @@ export default async function NovelChapterPage({
   if (!reading) notFound();
 
   const { novel, chapter, prev, next } = reading;
+  const body = parseNoteContent(reading.content, chapter.title).content;
   const chapterHref = (item: typeof chapter) =>
     pageHref(`/novels/${encodePath(novel.slug)}/${encodePath(item.slug)}/`);
 
@@ -54,7 +56,7 @@ export default async function NovelChapterPage({
           <h1 className="mt-0 mb-[36px] text-[clamp(28px,4vw,40px)] leading-[1.3]">{chapter.title}</h1>
 
           <article className="prose">
-            <MarkdownContent content={reading.content} relativePath={reading.relativePath} assetPrefix="/novel-assets" />
+            <MarkdownContent content={body} relativePath={reading.relativePath} assetPrefix="/novel-assets" />
           </article>
 
           <nav className="mt-[64px] grid grid-cols-2 gap-4 border-t-2 border-ink pt-[24px]" aria-label="章节导航">

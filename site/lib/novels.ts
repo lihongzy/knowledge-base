@@ -136,3 +136,18 @@ export async function getChapterReading(
 export function novelChapterCount(novel: NovelMeta): number {
   return novel.volumes.reduce((total, volume) => total + volume.chapters.length, 0);
 }
+
+// Reuse the first illustration as a shelf cover without adding remote assets.
+export async function getNovelCover(novel: NovelMeta): Promise<string | undefined> {
+  const first = novel.volumes[0]?.chapters[0];
+  if (!first) return undefined;
+  try {
+    const content = await fs.readFile(path.join(novelsDirectory, novel.id, "chapters", first.file), "utf8");
+    const image = content.match(/!\[[^\]]*\]\(([^\s)]+)\)/)?.[1];
+    if (!image || /^(?:https?:|\/)/i.test(image)) return undefined;
+    const relative = path.posix.normalize(path.posix.join(novel.id, "chapters", image));
+    return relative.startsWith(`${novel.id}/chapters/`) ? relative : undefined;
+  } catch {
+    return undefined;
+  }
+}

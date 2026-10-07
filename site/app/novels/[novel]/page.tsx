@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getNovel, getNovels, novelChapterCount } from "@/lib/novels";
-import { encodePath, pageHref } from "@/lib/site";
+import { getNovel, getNovels, getNovelCover, novelChapterCount } from "@/lib/novels";
+import { assetHref, encodePath, pageHref } from "@/lib/site";
+import { MagicCard } from "@/components/ui/magic-card";
 
 export const dynamicParams = false;
 
@@ -18,6 +19,7 @@ export default async function NovelOverviewPage({
   const { novel: novelId } = await params;
   const novel = await getNovel(novelId);
   if (!novel) notFound();
+  const cover = await getNovelCover(novel);
 
   return (
     <div className="mx-auto w-[min(1120px,calc(100%_-_48px))] max-w-[900px] pt-[46px] pb-[100px] max-sm:pt-[32px]">
@@ -29,8 +31,10 @@ export default async function NovelOverviewPage({
         <span>{novel.title}</span>
       </nav>
 
-      <h1 className="m-0 mb-[14px] text-[40px] leading-[1.25]">{novel.title}</h1>
-      <p className="mt-0 mb-[40px] font-mono text-xs text-ink-muted">
+      <MagicCard className="mb-8 rounded-3xl" gradientColor="var(--magic-glow)" gradientFrom="var(--primary)" gradientTo="var(--pine)"><div className="novel-overview-header">
+      {cover && <img className="novel-overview-cover" src={assetHref(`/novel-assets/${encodePath(cover)}`)} alt={`${novel.title} 插图`} />}
+      <div><p className="mb-4 font-mono text-xs text-primary">✦ NOVEL / STAR LIBRARY</p><h1 className="m-0 mb-[14px] text-[clamp(26px,3vw,36px)] leading-[1.4]">{novel.title}</h1>
+      <p className="mt-0 font-mono text-xs text-ink-muted">
         {novel.volumes.length} 卷 · {novelChapterCount(novel)} 章
         {novel.sourceCatalog && (
           <>
@@ -39,10 +43,11 @@ export default async function NovelOverviewPage({
           </>
         )}
       </p>
+      </div></div></MagicCard>
 
-      <div className="border-t-2 border-ink">
+      <div>
         {novel.volumes.map((volume, index) => (
-          <details className="border-b border-line" key={`${volume.title}-${index}`} open={index === 0}>
+          <details className="novel-volume" key={`${volume.title}-${index}`} open={index === 0}>
             <summary className="flex cursor-pointer list-none items-baseline gap-4 py-[18px] marker:content-none">
               <span className="font-mono text-xs text-brand">{String(index + 1).padStart(2, "0")}</span>
               <h2 className="m-0 flex-1 text-[19px] font-semibold leading-[1.5]">{volume.title}</h2>

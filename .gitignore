@@ -15,6 +15,9 @@ site/public/note-assets/
 site/public/novel-assets/
 site/coverage/
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 # Node.js dependencies (site/, 小说/*/ tooling)
 node_modules/
 

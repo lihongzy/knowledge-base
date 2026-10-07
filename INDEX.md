@@ -30,3 +30,6 @@
         - [第七章：hello-agents 1.0.0 兼容性踩坑录](notes/30-resources/tools/hello-agents/source-notes/chapter7-v1.0.0-compat-pitfalls.md)
     - `novel-scraper/`
       - [linovelib 小说爬虫](notes/30-resources/tools/novel-scraper/linovelib-小说爬虫.md)
+    - `video-scraper/`
+      - [从0开始的异世界 · 单季直链下载](notes/30-resources/tools/video-scraper/从0开始的异世界-单季直链下载.md)
+      - [进击的巨人 · 多线路下载策略](notes/30-resources/tools/video-scraper/进击的巨人-多线路下载策略.md)

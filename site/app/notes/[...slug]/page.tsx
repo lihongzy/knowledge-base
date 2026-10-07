@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MarkdownContent } from "@/components/markdown-content";
 import { categoryFor, categoryLabel, categoryNames, getAllNotes, getNote } from "@/lib/notes";
 import { encodePath, pageHref } from "@/lib/site";
+import { ReadingOutline } from "@/components/reading-outline";
 
 export const dynamicParams = false;
 
@@ -40,16 +41,25 @@ export default async function NotePage({ params }: { params: Promise<{ slug: str
   const category = segments[0];
 
   return (
-    <div className="mx-auto w-[min(1120px,calc(100%_-_48px))] max-w-[900px] pt-[46px] pb-[100px] max-sm:pt-[32px]">
-      <nav className="mb-[56px] flex flex-wrap gap-[9px] font-mono text-xs text-ink-muted max-sm:mb-[34px]" aria-label="面包屑">
+    <div className="note-layout"><div className="note-page">
+      <nav className="note-breadcrumb flex flex-wrap gap-[9px] text-xs text-ink-muted" aria-label="面包屑">
         <Link className="hover:text-pine" href={pageHref("/")}>知识库</Link>
         <span>/</span>
         <Link className="hover:text-pine" href={pageHref(`/notes/${encodePath(category)}/`)}>{categoryLabel(category)}</Link>
         {segments.slice(1, -1).map((segment, index) => <span key={`${segment}-${index}`}>/ {segment}</span>)}
       </nav>
-      <article className="prose">
+      <header className="note-header">
+        <h1>{note.title}</h1>
+        {(note.updated || note.tags.length > 0) && <div className="note-metadata">
+          {note.updated && <span>更新于 <time dateTime={note.updated}>{note.updated}</time></span>}
+          {note.tags.length > 0 && <ul className="note-tags" aria-label="文章标签">
+            {note.tags.map((tag) => <li key={tag}>{tag}</li>)}
+          </ul>}
+        </div>}
+      </header>
+      <article id="note-body" className="prose">
         <MarkdownContent content={note.content} relativePath={note.relativePath} />
       </article>
-    </div>
+    </div><ReadingOutline /></div>
   );
 }

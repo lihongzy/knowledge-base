@@ -70,7 +70,7 @@ function TocList({
                       <span
                         data-toc-active
                         aria-current="page"
-                        className="flex items-baseline gap-0 rounded-[4px] border-l-2 border-brand bg-[rgba(217,99,59,0.12)] px-[8px] py-[6px] text-[13px] font-semibold text-brand"
+                        className="flex items-baseline gap-0 rounded-lg border-l-2 border-primary bg-accent px-[8px] py-[6px] text-[13px] font-semibold text-primary"
                       >
                         {label}
                       </span>
@@ -127,7 +127,7 @@ export function NovelToc({ novel, currentSlug, totalChapters }: NovelTocProps) {
       {/* 桌面：sticky 侧栏（作为 grid 第一列） */}
       <aside
         ref={asideRef}
-        className="sticky top-[24px] hidden max-h-[calc(100vh-48px)] self-start overflow-y-auto rounded-[6px] border border-line bg-[rgba(235,228,212,0.5)] p-[16px] lg:block"
+        className="novel-toc sticky hidden self-start overflow-y-auto border border-line p-[16px] lg:block"
       >
         <div className="mb-[12px] border-b border-line pb-[12px]">
           <Link

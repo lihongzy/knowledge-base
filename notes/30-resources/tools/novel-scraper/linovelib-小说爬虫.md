@@ -11,7 +11,7 @@ tags: [爬虫, nodejs, linovelib, 小说]
 
 针对轻之文库（linovelib.com）的小说抓取脚本：按"解析目录 → 生成卷/章清单 → 逐章抓正文与插图"三阶段，把整本小说抓成 Markdown 语料，并生成 `novel.json` 清单。实战成果：《游戏人生》16 卷 130 章、正文 1,776,396 字（与源站"177.6 万字"口径一字不差），图文位置与原文一致。
 
-源码：[小说/游戏人生/scratch.js](../../../小说/游戏人生/scratch.js)
+源码：[小说/游戏人生/scratch.js](../../../../小说/游戏人生/scratch.js)
 技术栈：Node.js + axios（HTTP）+ cheerio（DOM 解析），依赖见脚本同目录 `package.json`。
 
 ## Notes
@@ -177,6 +177,6 @@ tags: [爬虫, nodejs, linovelib, 小说]
 
 ## References
 
-- 脚本源码：[小说/游戏人生/scratch.js](../../../小说/游戏人生/scratch.js)
-- 实标语料：[../../../小说/游戏人生](../../../小说/游戏人生)
+- 脚本源码：[小说/游戏人生/scratch.js](../../../../小说/游戏人生/scratch.js)
+- 实标语料：[小说/游戏人生](../../../../小说/游戏人生)
 - 源站目录：<https://www.linovelib.com/novel/9/catalog>
