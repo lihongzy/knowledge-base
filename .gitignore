@@ -30,6 +30,9 @@ site/.env*
 # AI-generated temporary artifacts and cloned repositories
 temp/
 
+# Downloaded anime videos (large media, regenerate with downloadVideo.js; keep videos.json data files tracked)
+videos/
+
 # Local credentials and Python environments for Hello Agents examples
 notes/30-resources/tools/hello-agents/code/.env
 notes/30-resources/tools/hello-agents/code/.venv/
